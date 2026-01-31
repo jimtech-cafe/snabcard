@@ -7,7 +7,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="text-2xl font-black tracking-tighter text-blue-600">
-          JimTech
+          JIMTech
         </div>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
