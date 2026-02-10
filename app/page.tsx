@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import Hero from "@/components/hero";
+import DataPurchase from "@/components/data-purchase";
 
 export default function LandingPage() {
   return (
@@ -7,12 +8,15 @@ export default function LandingPage() {
       <Header />
       {/* Hero Section */}
       <Hero />
+      {/* Data Purchase Section */}
+      <DataPurchase />
+      {/* Pricing Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="w-screen mx-auto px-6">
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
             Simple Pricing
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 w-screen mx-auto">
             {/* Free Tier */}
             <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col">
               <h3 className="text-xl font-bold mb-4">Starter</h3>
