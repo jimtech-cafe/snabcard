@@ -1,8 +1,37 @@
+"use client";
+
+import DataPurchase from "@/components/data-purchase";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
-import DataPurchase from "@/components/data-purchase";
+import { useEffect } from "react";
 
 export default function LandingPage() {
+  useEffect(() => {
+    // This works in a standard HTML script tag or a React useEffect
+    const redirectToApp = () => {
+      const userAgent = navigator.userAgent.toLowerCase(); // Convert to lowercase once
+      const appScheme = "datalink://";
+
+      // Check for Android or iOS
+      const isAndroid = userAgent.includes("android");
+      const isIos =
+        userAgent.includes("iphone") ||
+        userAgent.includes("ipad") ||
+        userAgent.includes("ipod");
+
+      if (isAndroid || isIos) {
+        // Attempt to open the app
+        window.location.href = appScheme;
+
+        // Fallback: If they don't have the app, show a message or link to store after 2 seconds
+        setTimeout(() => {
+          console.log(
+            "If the app didn't open, please install it from the Store.",
+          );
+        }, 2500);
+      }
+    };
+  }, []);
   return (
     <div className="bg-white text-gray-900 min-h-screen font-sans">
       <Header />
@@ -25,7 +54,7 @@ export default function LandingPage() {
               </p>
               <ul className="mb-8 space-y-4 text-gray-600 flex-1">
                 <li>✅ Basic Features</li>
-                <li>✅ Community Support</li>
+                <li>✅ Community Supports</li>
                 <li>✅ 1 Project</li>
               </ul>
               <button className="w-full py-3 px-6 rounded-lg border border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 transition">
